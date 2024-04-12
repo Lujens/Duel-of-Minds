@@ -22,7 +22,7 @@ player1_gq = ["True or False: The Pacific Ocean is the largest ocean on Earth.",
 
 #player one general knowledge answers:
 
-player1_ga = ["True. The Pacific Ocean is indeed the largest ocean by both surface area and volume.", "False. Despite the common belief, the Great Wall of China is not visible from space with the unaided eye. Astronauts can see it using specific photography equipment, but it's not visible to the naked eye.", "True. Mount Everest is the tallest mountain above sea level, reaching an elevation of 8,848.86 meters (29,031.7 feet).", "False. "]
+player1_ga = ["True. The Pacific Ocean is indeed the largest ocean by both surface area and volume.", "False. Despite the common belief, the Great Wall of China is not visible from space with the unaided eye. Astronauts can see it using specific photography equipment, but it's not visible to the naked eye.", "True. Mount Everest is the tallest mountain above sea level, reaching an elevation of 8,848.86 meters (29,031.7 feet).", "False. The capital of Australia is Canberra.", "False. The human body typically has two lungs.", "False. The currency of Japan is the yen.", "False. The Amazon Rainforest is primarily located in South America, spanning across several countries including Brazil, Peru, Colombia, and others.", "True. Water boils at 100 degrees Celsius (212 degrees Fahrenheit) at sea level under standard atmospheric pressure.", "True. The Statue of Liberty was a gift from the people of France to the United States, symbolizing freedom and democracy.", "False. The painting Mona Lisa was created by Leonardo da Vinci, not Vincent van Gogh."]
 
 # Player 2 general knowledge questions:
 
@@ -74,7 +74,7 @@ print(p1_question)
 player1_input = input()
 
 if p1_question == player1_hq[5]:
-	if player1_input == player1_ha[5]: #not defined yet
+	if player1_input == player1_ha[5]: 
 		player1_score = player1_score + 3
 		print("I recognize a genius when I see one ! Bravo.")
 		print("The answer is indeed: ", player1_ha[5])
