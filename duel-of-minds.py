@@ -113,7 +113,7 @@ print("Alright.", topic_choice, "Let's Get Started with the Duel of Minds!")
 
 # For History Questions
 question_set = history_questions if topic_choice == '1' else [
-     print ("Please type in an integer from 1 to 3")
+     #print ("Please type in an integer from 1 to 3")
 ]
 
 player1_score = 0
@@ -131,17 +131,18 @@ for i in range(num_questions):
             if player_response:
                 print("Correct! I recognize a genius when I see one !")
                 if player_name == player1_name:
-                    player1_score += 1
+                    player1_score += 3
                 else:
-                    player2_score += 1
+                    player2_score += 3
             else:
                 print("Nah, that's not it!")
             print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
             question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
 # For Sports Questions
 question_set = sports_questions if topic_choice == '2' else [
-     print ("Please type in an integer from 1 to 3")
+     #print ("Please type in an integer from 1 to 3")
 ]
 
 player1_score = 0
@@ -159,18 +160,19 @@ for i in range(num_questions):
             if player_response:
                 print("Correct! I recognize a genius when I see one !")
                 if player_name == player1_name:
-                    player1_score += 1
+                    player1_score += 3
                 else:
-                    player2_score += 1
+                    player2_score += 3
             else:
-                print("Nah, that's not it!")
+                print("Nah, that's not it!, pal.")
             print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
             question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
   
 # General Knowledge Questions
 
 question_set = general_questions if topic_choice == '3' else [
-     print ("Please type in an integer from 1 to 3")
+     #print ("Please type in an integer from 1 to 3")
 ]
 
 player1_score = 0
@@ -188,12 +190,13 @@ for i in range(num_questions):
             if player_response:
                 print("Correct! I recognize a genius when I see one !")
                 if player_name == player1_name:
-                    player1_score += 1
+                    player1_score += 3
                 else:
-                    player2_score += 1
+                    player2_score += 3
             else:
                 print("Nah, that's not it!")
             print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
             question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
-  
+# END OF GAME
