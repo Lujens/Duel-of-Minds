@@ -200,3 +200,14 @@ for i in range(num_questions):
             question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
 # END OF GAME
+
+# Show final scores and determine the winner
+print("\nGame Over!")
+print(f"{player1_name}'s score: {player1_score}")
+print(f"{player2_name}'s score: {player2_score}")
+if player1_score > player2_score:
+        print(f"{player1_name} wins!")
+elif player2_score > player1_score:
+        print(f"{player2_name} wins!")
+else:
+        print("Well, you two are gonna have to settle this somewhere else!")
