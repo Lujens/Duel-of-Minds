@@ -100,24 +100,27 @@ player2_socre = 0
 
 print("Welcome to Duel of Minds: Get Your Facts Straight")
 
-player_1_name = input("Player 1, What's your name?\n")
+player1_name = input("Player 1, What's your name?\n")
 
-player_2_name = input("Player 2, What's your name?\n")
+player2_name = input("Player 2, What's your name?\n")
 
-topic = input("Choose a topic:\n 1. History\n 2. Sports\n 3. General Knowledge\n" )
+topic_choice = input("Choose a topic:\n 1. History\n 2. Sports\n 3. General Knowledge\n" )
 
-print("Alright.", topic, "Let's Get Started with the Duel of Minds!")
+print("Alright.", topic_choice, "Let's Get Started with the Duel of Minds!")
 
 
 # Game Mechanics and Flow
 
-question_set = player_history_questions if topic_choice == '1' else []
+# For History Questions
+question_set = history_questions if topic_choice == '1' else [
+     print ("Please type in an integer from 1 to 3")
+]
 
-    player1_score = 0
-    player2_score = 0
-    num_questions = min(5, len(question_set))
+player1_score = 0
+player2_score = 0
+num_questions = min(5, len(question_set))
 
-    for i in range(num_questions):
+for i in range(num_questions):
         # Each player takes a turn
         for player_name in [player1_name, player2_name]:
             if not question_set:
@@ -126,18 +129,71 @@ question_set = player_history_questions if topic_choice == '1' else []
             print(f"\n{player_name}, your question is: {question}")
             player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
             if player_response:
-                print("Correct!")
+                print("Correct! I recognize a genius when I see one !")
                 if player_name == player1_name:
                     player1_score += 1
                 else:
                     player2_score += 1
             else:
-                print("Incorrect!")
+                print("Nah, that's not it!")
             print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
             question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
+# For Sports Questions
+question_set = sports_questions if topic_choice == '2' else [
+     print ("Please type in an integer from 1 to 3")
+]
 
+player1_score = 0
+player2_score = 0
+num_questions = min(5, len(question_set))
+
+for i in range(num_questions):
+        # Each player takes a turn
+        for player_name in [player1_name, player2_name]:
+            if not question_set:
+                break  # No more questions available
+            question, (correct_answer, explanation) = random.choice(question_set)
+            print(f"\n{player_name}, your question is: {question}")
+            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
+            if player_response:
+                print("Correct! I recognize a genius when I see one !")
+                if player_name == player1_name:
+                    player1_score += 1
+                else:
+                    player2_score += 1
+            else:
+                print("Nah, that's not it!")
+            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
   
-  
+# General Knowledge Questions
+
+question_set = general_questions if topic_choice == '3' else [
+     print ("Please type in an integer from 1 to 3")
+]
+
+player1_score = 0
+player2_score = 0
+num_questions = min(5, len(question_set))
+
+for i in range(num_questions):
+        # Each player takes a turn
+        for player_name in [player1_name, player2_name]:
+            if not question_set:
+                break  # No more questions available
+            question, (correct_answer, explanation) = random.choice(question_set)
+            print(f"\n{player_name}, your question is: {question}")
+            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
+            if player_response:
+                print("Correct! I recognize a genius when I see one !")
+                if player_name == player1_name:
+                    player1_score += 1
+                else:
+                    player2_score += 1
+            else:
+                print("Nah, that's not it!")
+            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
   
