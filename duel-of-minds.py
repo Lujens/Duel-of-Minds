@@ -47,10 +47,49 @@ general_questions = [
     ("The painting Mona Lisa was created by Vincent van Gogh.", 
      (False, 'The painting "Mona Lisa" was created by Leonardo da Vinci, not Vincent van Gogh.'))
 ]
-#Sports Questions:
-
-sports_questions = [("The Olympic Games were originally held in Rome, Italy.", (False, "The original Olympic Games were held in Olympia, Greece." )), ("Michael Phelps has won more Olympic gold medals than any other athlete in history.", (True, "Michael Phelps has won a total of 23 Olympic gold medals.")), ("In basketball, the term 'slam dunk' was first introduced by the NBA.", (False,'The term "slam dunk" was popularized in basketball well before the NBA adopted it as a key part of the game.')), ("Golf was played on the moon by astronaut Alan Shepard during the Apollo 14 mission.", (True, "Alan Shepard famously hit two golf balls on the lunar surface during the Apollo 14 mission.")), ("The FIFA World Cup has always included teams from every continent since its inception.", (False, "The initial World Cups did not have as inclusive a representation of teams from every continent as they do today.")), ("Serena Williams has won more Grand Slam singles titles than any other woman in the Open Era.", (True, "Serena Williams has won 23 Grand Slam singles titles, the most by any player in the Open Era.")), ("The marathon race distance is exactly the same distance as the original run from the Battle of Marathon to Athens.", (False, "the original marathon distance was approximately 40 kilometers, but the official marathon distance now is 42.195 kilometers (26.219 miles).")), ("In cricket, a 'hat-trick' refers to a bowler taking three wickets with consecutive deliveries.", (True, "a hat-trick in cricket is achieved when a bowler takes three wickets with three consecutive balls.")), ("The Tour de France cycling race was originally started to increase sales for a newspaper.", (True, "the Tour de France was initially organized in 1903 by the newspaper L'Auto to increase its circulation.")), ("The Super Bowl is the most-watched sporting event in the world each year.", (False, "The FIFA World Cup final is generally the most-watched sporting event globally, surpassing the Super Bowl."));
-		   ("Lionel Messi has won the FIFA World Player of the Year award more times than Cristiano Ronaldo.", (True, "Both players have won numerous awards, but their totals can vary depending on the specific award in question. Messi has won the Ballon d'Or award more times than Ronaldo.")), ("The New York Yankees have won more World Series titles than any other team in MLB history.", (True, "The New York Yankees have won 27 World Series titles than any other team in MLB history")), ("In tennis, a 'golden set' is when a player wins a set without losing a single point.", (True, "A golden set is an extremely rare achievement where a player wins all 24 points of a set.")), ("The National Hockey League (NHL) was founded in the United States.", (False, "The NHL was founded in Montreal, Canada, in 1917.")), ("A regulation soccer match consists of two 45-minute halves with a 15-minute halftime break.", (True, "This is the standard format for regulation soccer matches.")), ("The term 'grand slam' originates from bridge, a card game, before it was used in sports.", (True, 'the term "grand slam" was used in card games like bridge and whist before it was adopted in sports.')), ("In the NBA, the team with the best regular-season record automatically hosts the first game of the Finals.", (True, "The team with the better regular-season record gets home-court advantage in the NBA Finals.")), ("The first Winter Olympic Games were held in Chamonix, France, in 1924.", (True, "the first Winter Olympics took place in Charmonix in 1924.")), ("The term 'hole in one' is exclusive to the sport of golf.", (True, 'A "hole in one" refers specifically to golf when a ball is hit directly from the tee into the cup with one storke.")), ("Rugby is older than American football, and American football evolved from rugby.", (True, "Rugby dates back to the 19th century and influenced the development of American football."))]
+# Sports Questions:
+sports_questions = [
+    ("The Olympic Games were originally held in Rome, Italy.", 
+     (False, "The original Olympic Games were held in Olympia, Greece.")),
+    ("Michael Phelps has won more Olympic gold medals than any other athlete in history.", 
+     (True, "Michael Phelps has won a total of 23 Olympic gold medals.")),
+    ("In basketball, the term 'slam dunk' was first introduced by the NBA.", 
+     (False, "The term 'slam dunk' was popularized in basketball well before the NBA adopted it as a key part of the game.")),
+    ("Golf was played on the moon by astronaut Alan Shepard during the Apollo 14 mission.", 
+     (True, "Alan Shepard famously hit two golf balls on the lunar surface during the Apollo 14 mission.")),
+    ("The FIFA World Cup has always included teams from every continent since its inception.", 
+     (False, "The initial World Cups did not have as inclusive a representation of teams from every continent as they do today.")),
+    ("Serena Williams has won more Grand Slam singles titles than any other woman in the Open Era.", 
+     (True, "Serena Williams has won 23 Grand Slam singles titles, the most by any player in the Open Era.")),
+    ("The marathon race distance is exactly the same distance as the original run from the Battle of Marathon to Athens.", 
+     (False, "The original marathon distance was approximately 40 kilometers, but the official marathon distance now is 42.195 kilometers (26.219 miles).")),
+    ("In cricket, a 'hat-trick' refers to a bowler taking three wickets with consecutive deliveries.", 
+     (True, "A hat-trick in cricket is achieved when a bowler takes three wickets with three consecutive balls.")),
+    ("The Tour de France cycling race was originally started to increase sales for a newspaper.", 
+     (True, "The Tour de France was initially organized in 1903 by the newspaper L'Auto to increase its circulation.")),
+    ("The Super Bowl is the most-watched sporting event in the world each year.", 
+     (False, "The FIFA World Cup final is generally the most-watched sporting event globally, surpassing the Super Bowl.")),
+    ("Lionel Messi has won the FIFA World Player of the Year award more times than Cristiano Ronaldo.", 
+     (True, "Both players have won numerous awards, but their totals can vary depending on the specific award in question. Messi has won the Ballon d'Or award more times than Ronaldo.")),
+    ("The New York Yankees have won more World Series titles than any other team in MLB history.", 
+     (True, "The New York Yankees have won 27 World Series titles, the most in MLB history.")),
+    ("In tennis, a 'golden set' is when a player wins a set without losing a single point.", 
+     (True, "A golden set is an extremely rare achievement where a player wins all 24 points of a set.")),
+    ("The National Hockey League (NHL) was founded in the United States.", 
+     (False, "The NHL was founded in Montreal, Canada, in 1917.")),
+    ("A regulation soccer match consists of two 45-minute halves with a 15-minute halftime break.", 
+     (True, "This is the standard format for regulation soccer matches.")),
+    ("The term 'grand slam' originates from bridge, a card game, before it was used in sports.", 
+     (True, "The term 'grand slam' was used in card games like bridge and whist before it was adopted in sports.")),
+    ("In the NBA, the team with the best regular-season record automatically hosts the first game of the Finals.", 
+     (True, "The team with the better regular-season record gets home-court advantage in the NBA Finals.")),
+    ("The first Winter Olympic Games were held in Chamonix, France, in 1924.", 
+     (True, "The first Winter Olympics took place in Chamonix in 1924.")),
+    ("The term 'hole in one' is exclusive to the sport of golf.", 
+     (True, 'A "hole in one" refers specifically to golf when a ball is hit directly from the tee into the cup with one stroke.')),
+    ("Rugby is older than American football, and American football evolved from rugby.", 
+     (True, "Rugby dates back to the 19th century and influenced the development of American football."))
+]
 
 #Null Scores
 player1_score = 0
