@@ -33,27 +33,33 @@ topic = input("Choose a topic:\n 1. History\n 2. Sports\n 3. General Knowledge\n
 
 print("Alright.", topic, "Let's Get Started with the Duel of Minds!")
 
-if topic == "1" or topic == "History":
-  p1_question = random.choice(player1_hq)
-
-print(player_1_name,", Here is your first question:")
-print(p1_question)
-
-player1_input = input()
-
-if p1_question == player1_hq[5]:
-	if player1_input == player1_ha[5]: 
-		player1_score = player1_score + 3
-		print("I recognize a genius when I see one ! Bravo.")
-		print("The answer is indeed: ", player1_ha[5])
-	else:
-		print("Nah, that's incorrect.")
-		print("The correct answer is: ", player1_ha[5])
-  
 
 # Game Mechanics and Flow
 
+question_set = player_history_questions if topic_choice == '1' else []
 
+    player1_score = 0
+    player2_score = 0
+    num_questions = min(5, len(question_set))
+
+    for i in range(num_questions):
+        # Each player takes a turn
+        for player_name in [player1_name, player2_name]:
+            if not question_set:
+                break  # No more questions available
+            question, (correct_answer, explanation) = random.choice(question_set)
+            print(f"\n{player_name}, your question is: {question}")
+            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
+            if player_response:
+                print("Correct!")
+                if player_name == player1_name:
+                    player1_score += 1
+                else:
+                    player2_score += 1
+            else:
+                print("Incorrect!")
+            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
+            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
 
 
   
