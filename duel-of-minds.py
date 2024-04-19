@@ -1,213 +1,209 @@
+import tkinter as tk
 import random
 
-# History questions:
-history_questions = [
-    ("The Great Wall of China was built entirely during the Qin Dynasty.", 
-     (False, "The Great Wall of China was not built entirely during the Qin Dynasty. While construction began during the Qin Dynasty (221–206 BC), most of the existing wall was built during the Ming Dynasty (1368–1644 AD).")),
-    ("Julius Caesar was the first Roman Emperor.", 
-     (False, "Julius Caesar was not the first Roman Emperor; he was a Roman general and statesman who played a significant role in the transition from the Roman Republic to the Roman Empire. The first Roman Emperor was Augustus, who came to power after Caesar's death.")),
-    ("The Hundred Years' War was fought between England and France.", 
-     (True, "The Hundred Years' War was a series of conflicts fought between England and France from 1337 to 1453 over various territorial and dynastic disputes.")),
-    ("The Renaissance began in the 14th century in Italy.", 
-     (True, "The Renaissance, a period of cultural, artistic, and intellectual rebirth, began in Italy in the 14th century before spreading to other parts of Europe.")),
-    ("World War II ended in 1945.", 
-     (True, "World War II ended in 1945 with the surrender of Japan in September, following the atomic bombings of Hiroshima and Nagasaki and the subsequent unconditional surrender of Japan.")),
-    ("The Industrial Revolution began in Britain during the late 18th century.", 
-     (True, "The Industrial Revolution began in Britain in the late 18th century, characterized by the transition to new manufacturing processes and the widespread adoption of machinery.")),
-    ("Nelson Mandela was the first black president of South Africa, elected in 1994.", 
-     (True, "Nelson Mandela was indeed the first black president of South Africa, elected in 1994 following the end of apartheid.")),
-    ("The Declaration of Independence was signed in 1776.", 
-     (True, "The Declaration of Independence was adopted by the Continental Congress on July 4, 1776, declaring the thirteen American colonies independent from British rule.")),
-    ("The United States entered World War II after the bombing of Pearl Harbor on December 7, 1941.", 
-     (True, "The United States entered World War II after the Japanese attack on Pearl Harbor on December 7, 1941.")),
-    ("The Titanic sank in 1912 after hitting an iceberg.", 
-     (True, "The Titanic, a British passenger liner, sank on April 15, 1912, after hitting an iceberg during its maiden voyage from Southampton to New York City."))
-]
+# Initialize the main application window
+root = tk.Tk()
+root.title("Duel of Minds: Get Your Facts Straight !")
+root.geometry("600x400") # size of the pop-up window
 
-# General knowledge questions:
+# Define question sets
+history_questions = [
+    ("True or False: The Great Wall of China was built entirely during the Qin Dynasty.", 
+     (False, "The Great Wall of China was not built entirely during the Qin Dynasty. While construction began during the Qin Dynasty (221–206 BC), most of the existing wall was built during the Ming Dynasty (1368–1644 AD).")),
+    ("True or False: Julius Caesar was the first Roman Emperor.", 
+     (False, "Julius Caesar was not the first Roman Emperor; he was a Roman general and statesman who played a significant role in the transition from the Roman Republic to the Roman Empire. The first Roman Emperor was Augustus, who came to power after Caesar's death.")),
+    ("True or False: The Hundred Years' War was fought between England and France.", 
+     (True, "The Hundred Years' War was a series of conflicts fought between England and France from 1337 to 1453 over various territorial and dynastic disputes.")),
+    ("True or False: The Renaissance began in the 14th century in Italy.", 
+     (True, "The Renaissance, a period of cultural, artistic, and intellectual rebirth, began in Italy in the 14th century before spreading to other parts of Europe.")),
+    ("True or False: World War II ended in 1945.", 
+     (True, "World War II ended in 1945 with the surrender of Japan in September, following the atomic bombings of Hiroshima and Nagasaki and the subsequent unconditional surrender of Japan.")),
+    ("True or False: The Industrial Revolution began in Britain during the late 18th century.", 
+     (True, "The Industrial Revolution began in Britain in the late 18th century, characterized by the transition to new manufacturing processes and the widespread adoption of machinery.")),
+    ("True or False: Nelson Mandela was the first black president of South Africa, elected in 1994.", 
+     (True, "Nelson Mandela was indeed the first black president of South Africa, elected in 1994 following the end of apartheid.")),
+    ("True or False: The Declaration of Independence was signed in 1776.", 
+     (True, "The Declaration of Independence was adopted by the Continental Congress on July 4, 1776, declaring the thirteen American colonies independent from British rule.")),
+    ("True or False: The United States entered World War II after the bombing of Pearl Harbor on December 7, 1941.", 
+     (True, "The United States entered World War II after the Japanese attack on Pearl Harbor on December 7, 1941.")),
+    ("True or False: The Titanic sank in 1912 after hitting an iceberg.", 
+     (True, "The Titanic, a British passenger liner, sank on April 15, 1912, after hitting an iceberg during its maiden voyage from Southampton to New York City."))
+] 
+
 general_questions = [
-    ("The Pacific Ocean is the largest ocean on Earth.", 
+    ("True or False: The Pacific Ocean is the largest ocean on Earth.", 
      (True, "The Pacific Ocean is indeed the largest ocean by both surface area and volume.")),
-    ("The Great Wall of China is visible from space.", 
+    ("True or False: The Great Wall of China is visible from space.", 
      (False, "Despite the common belief, the Great Wall of China is not visible from space with the unaided eye. Astronauts can see it using specific photography equipment, but it's not visible to the naked eye.")),
-    ("Mount Everest is the tallest mountain in the world.", 
+    ("True or False: Mount Everest is the tallest mountain in the world.", 
      (True, "Mount Everest is the tallest mountain above sea level, reaching an elevation of 8,848.86 meters (29,031.7 feet).")),
-    ("The capital of Australia is Sydney.", 
+    ("True or False: The capital of Australia is Sydney.", 
      (False, "The capital of Australia is Canberra.")),
-    ("The human body has four lungs.", 
+    ("True or False: The human body has four lungs.", 
      (False, "The human body typically has two lungs.")),
-    ("The currency of Japan is the yuan.", 
+    ("True or False: he currency of Japan is the yuan.", 
      (False, "The currency of Japan is the yen.")),
-    ("The Amazon Rainforest is primarily located in Africa.", 
+    ("True or False: he Amazon Rainforest is primarily located in Africa.", 
      (False, "The Amazon Rainforest is primarily located in South America, spanning across several countries including Brazil, Peru, Colombia, and others.")),
-    ("Water boils at 100 degrees Celsius (212 degrees Fahrenheit).", 
+    ("True or False: Water boils at 100 degrees Celsius (212 degrees Fahrenheit).", 
      (True, "Water boils at 100 degrees Celsius (212 degrees Fahrenheit) at sea level under standard atmospheric pressure.")),
-    ("The Statue of Liberty was a gift from France to the United States.", 
+    ("True or False: The Statue of Liberty was a gift from France to the United States.", 
      (True, "The Statue of Liberty was a gift from the people of France to the United States, symbolizing freedom and democracy.")),
-    ("The painting Mona Lisa was created by Vincent van Gogh.", 
+    ("True or False: The painting Mona Lisa was created by Vincent van Gogh.", 
      (False, 'The painting "Mona Lisa" was created by Leonardo da Vinci, not Vincent van Gogh.'))
 ]
-# Sports Questions:
+
 sports_questions = [
-    ("The Olympic Games were originally held in Rome, Italy.", 
+    ("True or False: The Olympic Games were originally held in Rome, Italy.", 
      (False, "The original Olympic Games were held in Olympia, Greece.")),
-    ("Michael Phelps has won more Olympic gold medals than any other athlete in history.", 
-     (True, "Michael Phelps has won a total of 23 Olympic gold medals.")),
-    ("In basketball, the term 'slam dunk' was first introduced by the NBA.", 
-     (False, "The term 'slam dunk' was popularized in basketball well before the NBA adopted it as a key part of the game.")),
-    ("Golf was played on the moon by astronaut Alan Shepard during the Apollo 14 mission.", 
+    ("True or False: Golf was played on the moon by astronaut Alan Shepard during the Apollo 14 mission.", 
      (True, "Alan Shepard famously hit two golf balls on the lunar surface during the Apollo 14 mission.")),
-    ("The FIFA World Cup has always included teams from every continent since its inception.", 
-     (False, "The initial World Cups did not have as inclusive a representation of teams from every continent as they do today.")),
-    ("Serena Williams has won more Grand Slam singles titles than any other woman in the Open Era.", 
-     (True, "Serena Williams has won 23 Grand Slam singles titles, the most by any player in the Open Era.")),
-    ("The marathon race distance is exactly the same distance as the original run from the Battle of Marathon to Athens.", 
-     (False, "The original marathon distance was approximately 40 kilometers, but the official marathon distance now is 42.195 kilometers (26.219 miles).")),
-    ("In cricket, a 'hat-trick' refers to a bowler taking three wickets with consecutive deliveries.", 
-     (True, "A hat-trick in cricket is achieved when a bowler takes three wickets with three consecutive balls.")),
-    ("The Tour de France cycling race was originally started to increase sales for a newspaper.", 
+    ("True or False: The Tour de France cycling race was originally started to increase sales for a newspaper.", 
      (True, "The Tour de France was initially organized in 1903 by the newspaper L'Auto to increase its circulation.")),
-    ("The Super Bowl is the most-watched sporting event in the world each year.", 
+    ("True or False: The Super Bowl is the most-watched sporting event in the world each year.", 
      (False, "The FIFA World Cup final is generally the most-watched sporting event globally, surpassing the Super Bowl.")),
-    ("Lionel Messi has won the FIFA World Player of the Year award more times than Cristiano Ronaldo.", 
-     (True, "Both players have won numerous awards, but their totals can vary depending on the specific award in question. Messi has won the Ballon d'Or award more times than Ronaldo.")),
-    ("The New York Yankees have won more World Series titles than any other team in MLB history.", 
+    ("True or False: The New York Yankees have won more World Series titles than any other team in MLB history.", 
      (True, "The New York Yankees have won 27 World Series titles, the most in MLB history.")),
-    ("In tennis, a 'golden set' is when a player wins a set without losing a single point.", 
-     (True, "A golden set is an extremely rare achievement where a player wins all 24 points of a set.")),
-    ("The National Hockey League (NHL) was founded in the United States.", 
+    ("True or False: In tennis, a 'golden set' is when a player wins a set without losing a single point.", 
+     (True, "True or False: A golden set is an extremely rare achievement where a player wins all 24 points of a set.")),
+    ("True or False: The National Hockey League (NHL) was founded in the United States.", 
      (False, "The NHL was founded in Montreal, Canada, in 1917.")),
-    ("A regulation soccer match consists of two 45-minute halves with a 15-minute halftime break.", 
-     (True, "This is the standard format for regulation soccer matches.")),
-    ("The term 'grand slam' originates from bridge, a card game, before it was used in sports.", 
+    ("True or False: The term 'grand slam' originates from bridge, a card game, before it was used in sports.", 
      (True, "The term 'grand slam' was used in card games like bridge and whist before it was adopted in sports.")),
-    ("In the NBA, the team with the best regular-season record automatically hosts the first game of the Finals.", 
+    ("True or False: In the NBA, the team with the best regular-season record automatically hosts the first game of the Finals.", 
      (True, "The team with the better regular-season record gets home-court advantage in the NBA Finals.")),
-    ("The first Winter Olympic Games were held in Chamonix, France, in 1924.", 
-     (True, "The first Winter Olympics took place in Chamonix in 1924.")),
-    ("The term 'hole in one' is exclusive to the sport of golf.", 
+    ("True or False: The term 'hole in one' is exclusive to the sport of golf.", 
      (True, 'A "hole in one" refers specifically to golf when a ball is hit directly from the tee into the cup with one stroke.')),
-    ("Rugby is older than American football, and American football evolved from rugby.", 
-     (True, "Rugby dates back to the 19th century and influenced the development of American football."))
 ]
 
-#Null Scores
-player1_score = 0
-player2_socre = 0
+# Entry for player names
+player1_label = tk.Label(root, text="Player 1, what's your name? 😊")
+player1_label.pack(pady=(10, 5))
+player1_name = tk.StringVar()
+player2_name = tk.StringVar()
+player1_entry = tk.Entry(root, textvariable=player1_name)
+player1_entry.pack(pady=(10, 5))
+player2_label = tk.Label(root, text="Player 2, don't feel left out. What's yours? 🫡")
+player2_label.pack(pady=(10, 5))
+player2_entry = tk.Entry(root, textvariable=player2_name)
+player2_entry.pack(pady=5)
 
+# Dropdown for selecting topic
+topic_choice = tk.StringVar()
+topic_choice.set("1")  # Default value
+topic_label = tk.Label(root, text="Choose a topic:\n1. History\n2. Sports\n3. General Knowledge")
+topic_label.pack(pady=(10, 5))
+topic_menu = tk.OptionMenu(root, topic_choice, "1", "2", "3")
+topic_menu.pack()
 
-# OUTPUT
+# Status and result display
+result_text = tk.StringVar()
+result_label = tk.Label(root, textvariable=result_text, wraplength=550)
+result_label.pack(pady=(10, 0))  # Initially hidden
 
-print("Welcome to Duel of Minds: Get Your Facts Straight")
+# Button to start the game
+start_button = tk.Button(root, text="Let's Get It!", command=lambda: start_game())
+start_button.pack(pady=20)
 
-player1_name = input("Player 1, What's your name?\n")
+def start_game():
+    player1_label.pack_forget()
+    player2_label.pack_forget()
+    player1_entry.pack_forget()
+    player2_entry.pack_forget()
+    topic_menu.pack_forget()
+    start_button.pack_forget()
+    topic_label.pack_forget()
 
-player2_name = input("Player 2, What's your name?\n")
+    questions = {
+        "1": history_questions,
+        "2": sports_questions,
+        "3": general_questions
+    }.get(topic_choice.get(), history_questions)  # Default to history if something goes wrong
 
-topic_choice = input("Choose a topic:\n 1. History\n 2. Sports\n 3. General Knowledge\n" )
+    play_trivia_game(questions)
 
-print("Alright.", topic_choice, "Let's Get Started with the Duel of Minds!")
+def play_trivia_game(questions):
+    player_scores = {player1_name.get(): 0, player2_name.get(): 0}
+    players = [player1_name.get(), player2_name.get()]
+    question_count = {player1_name.get(): 0, player2_name.get(): 0}
+    questions_asked = [0]  # Use a list for mutable integer
+    current_question = [None]  # Mutable container for the current question
 
+    def clear_display():
+        """Clears the question and explanation text from the screen before showing final scores."""
+        question_info.set("")
+        explanation_info.set("")
+        answer_entry.delete(0, tk.END)
+        answer_entry.pack_forget()
+        submit_button.pack_forget()
+        next_button.pack_forget()
+        current_turn_info.set("")
 
-# Game Mechanics and Flow
+    def ask_question():
+        nonlocal questions
+        if questions_asked[0] >= 10:
+            clear_display() # Clear the display before displaying the scores.
+            result_text.set(f"End of the Duel ! Let's see how you did:\n{players[0]}: {player_scores[players[0]]}\n{players[1]}: {player_scores[players[1]]}")
+            next_button.pack_forget()
+            return  # End game if both players have answered all their questions
 
-# For History Questions
-question_set = history_questions if topic_choice == '1' else [
-     #print ("Please type in an integer from 1 to 3")
-]
+        current_player = players[questions_asked[0] % 2]
+        question_num = question_count[current_player] + 1
 
-player1_score = 0
-player2_score = 0
-num_questions = min(5, len(question_set))
+        # Select and display the current question
+        current_question[0] = random.choice(questions)
+        question, (correct_answer, explanation) = current_question[0]
+        current_turn_info.set(f"{current_player}, here's your {ordinal(question_num)} question:")
+        question_info.set(question)
 
-for i in range(num_questions):
-        # Each player takes a turn
-        for player_name in [player1_name, player2_name]:
-            if not question_set:
-                break  # No more questions available
-            question, (correct_answer, explanation) = random.choice(question_set)
-            print(f"\n{player_name}, your question is: {question}")
-            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
-            if player_response:
-                print("Correct! I recognize a genius when I see one !")
-                if player_name == player1_name:
-                    player1_score += 3
-                else:
-                    player2_score += 3
-            else:
-                print("Nah, that's not it!")
-            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
-            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
-            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
+        answer_entry.config(state='normal')
+        submit_button.pack(pady=(5, 20))
 
-# For Sports Questions
-question_set = sports_questions if topic_choice == '2' else [
-     #print ("Please type in an integer from 1 to 3")
-]
+    def check_answer():
+        nonlocal questions_asked
+        current_player = players[questions_asked[0] % 2]
+        question, (correct_answer, explanation) = current_question[0]
+        user_answer = answer_var.get().strip().lower() == str(correct_answer).lower()
+        if user_answer:
+            player_scores[current_player] += 3  # Increment score by 3 (just like football)
+            explanation_info.set("What a genius!🤯 This is Correct! " + explanation)
+        else:
+            explanation_info.set(f"Nah. Get Your Facts Straight👎🏽. This is Incorrect! The correct answer is: {correct_answer}. {explanation}")
 
-player1_score = 0
-player2_score = 0
-num_questions = min(5, len(question_set))
+        questions.remove(current_question[0])  # Remove the answered question
+        question_count[current_player] += 1  # Increment question count for current player
+        questions_asked[0] += 1  # Increment total questions asked
+        answer_entry.config(state='disabled')
+        submit_button.pack_forget()
 
-for i in range(num_questions):
-        # Each player takes a turn
-        for player_name in [player1_name, player2_name]:
-            if not question_set:
-                break  # No more questions available
-            question, (correct_answer, explanation) = random.choice(question_set)
-            print(f"\n{player_name}, your question is: {question}")
-            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
-            if player_response:
-                print("Correct! I recognize a genius when I see one !")
-                if player_name == player1_name:
-                    player1_score += 3
-                else:
-                    player2_score += 3
-            else:
-                print("Nah, that's not it!, pal.")
-            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
-            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
-            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
-  
-# General Knowledge Questions
+    # UI components for the game
+    current_turn_info = tk.StringVar()
+    tk.Label(root, textvariable=current_turn_info).pack()
 
-question_set = general_questions if topic_choice == '3' else [
-     #print ("Please type in an integer from 1 to 3")
-]
+    question_info = tk.StringVar()
+    tk.Label(root, textvariable=question_info, wraplength=550).pack()
 
-player1_score = 0
-player2_score = 0
-num_questions = min(5, len(question_set))
+    answer_var = tk.StringVar()
+    answer_entry = tk.Entry(root, textvariable=answer_var)
+    answer_entry.pack()
 
-for i in range(num_questions):
-        # Each player takes a turn
-        for player_name in [player1_name, player2_name]:
-            if not question_set:
-                break  # No more questions available
-            question, (correct_answer, explanation) = random.choice(question_set)
-            print(f"\n{player_name}, your question is: {question}")
-            player_response = input("True or False? ").strip().lower() == str(correct_answer).lower()
-            if player_response:
-                print("Correct! I recognize a genius when I see one !")
-                if player_name == player1_name:
-                    player1_score += 3
-                else:
-                    player2_score += 3
-            else:
-                print("Nah, that's not it!")
-            print(f"Explanation: {explanation}")  # Display the explanation regardless of the answer
-            print(f"{player_name}'s current score: {player1_score if player_name == player1_name else player2_score}")  # Show current score
-            question_set.remove((question, (correct_answer, explanation)))  # Remove the used question
+    submit_button = tk.Button(root, text="👉🏽Check Your Fact", command=check_answer)
 
-# END OF GAME
+    explanation_info = tk.StringVar()
+    tk.Label(root, textvariable=explanation_info, wraplength=550).pack()
 
-# Show final scores and determine the winner
-print("\nGame Over!")
-print(f"{player1_name}'s score: {player1_score}")
-print(f"{player2_name}'s score: {player2_score}")
-if player1_score > player2_score:
-        print(f"{player1_name} wins!")
-elif player2_score > player1_score:
-        print(f"{player2_name} wins!")
-else:
-        print("Well, you two are gonna have to settle this somewhere else!")
+    next_button = tk.Button(root, text="🧠 Next Question", command=ask_question)
+    next_button.pack(pady=(10, 20))
+
+    ask_question()  # Start the first question
+
+def ordinal(n):
+    """Convert an integer into its ordinal representation to properly format question labels."""
+    if 10 <= n % 100 <= 20:
+        suffix = 'th'
+    else:
+        suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return str(n) + suffix
+
+root.mainloop()
+
