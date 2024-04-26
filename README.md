@@ -44,3 +44,20 @@ How to Play
     Answer Questions: The game will present questions one at a time to each player. Type your answer (True or False) into the input field and submit it by clicking the 'Submit Answer' button.
     Check Scores: After each answer, the game updates the score based on correctness and shows the next question.
     Game Over: The game ends when all questions are answered. The final scores are displayed along with the winner.
+
+Appendix
+Luis - 45%
+Looked for History and General Knowledge Questions.
+Worked with the names of the variables, and their role inside the code.
+Created and designed the flow chart for the code.
+Organized the tuples inside the lists in which the questions, answers, and facts were in.
+Worked through several aspects of the code.
+
+Lujens – 55%
+Looked for the Sport Questions.
+Contributed significantly to implementing the game mechanics and flow.
+Implemented the GUI using Tkinter.
+Debugged and Tested the code.
+
+
+
