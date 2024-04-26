@@ -49,15 +49,23 @@ Appendix
 
    Luis - 45%
    Looked for History and General Knowledge Questions.
+   
    Worked with the names of the variables, and their role inside the code.
+   
    Created and designed the flow chart for the code.
+   
    Organized the tuples inside the lists in which the questions, answers, and facts were in.
+   
    Worked through several aspects of the code.
 
    Lujens – 55%
+   
    Looked for the Sport Questions.
+   
    Contributed significantly to implementing the game mechanics and flow.
+   
    Implemented the GUI using Tkinter.
+   
    Debugged and Tested the code.
 
 
