@@ -36,7 +36,7 @@ Duel of Minds is an interactive trivia game that lets two players compete to tes
 ---
 
 ## 🖼️ Screenshot
-*(Add one later from the game window, e.g. `assets/screenshot.png`)*  
+[Demo](https://github.com/Lujens/Duel-of-Minds/tree/bfc447bfca9b6c4344b93149f7ffda341aaba5ee/Demo)  
 
 ---
 
