@@ -20,6 +20,33 @@ Duel of Minds is an interactive trivia game that lets two players compete to tes
 
 ---
 
+## 🎮 How to Play
+1. Run the game and enter **Player 1** and **Player 2** names.  
+2. Choose a topic (1 = History, 2 = Sports, 3 = General Knowledge).  
+3. Each player takes turns answering **True/False** questions.  
+4. Earn **3 points** per correct answer.  
+5. The player with the highest score wins the duel! 🏆  
+
+---
+
+## 👥 Contributors
+- **Lujens Pierre (55%)** — GUI implementation (Tkinter), debugging, sports questions.  
+- **Luis (45%)** — History & General Knowledge questions, code flowchart, structure design.  
+
+---
+
+## 🖼️ Screenshot
+*(Add one later from the game window, e.g. `assets/screenshot.png`)*  
+
+---
+
+## 📄 License
+Open-source under the **MIT License** — free to use and modify.  
+
+---
+
+⭐ *Built with Python, teamwork, and a little friendly rivalry.*
+
 ## 🚀 Setup & Run
 
 ### 1️⃣ Prerequisites
@@ -27,3 +54,10 @@ Duel of Minds is an interactive trivia game that lets two players compete to tes
 - Tkinter usually comes pre-installed, but if needed:
   ```bash
   pip install tk
+
+ ## 2️⃣ Clone & Run
+```bash
+git clone https://github.com/<your-username>/Duel-of-Minds.git
+cd Duel-of-Minds
+python duel_of_minds.py
+
